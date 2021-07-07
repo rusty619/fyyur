@@ -23,7 +23,7 @@ app.config.from_object('config')
 
 # TODO: connect to a local postgresql database
 db = SQLAlchemy(app)
-#migrate = Migrate(app, db)
+migrate = Migrate(app, db)
 
 #----------------------------------------------------------------------------#
 # Models.
@@ -85,7 +85,7 @@ class Show(db.Model):
   def __repr__(self):
     return f'<Show: {self.name} Artist_id: {self.artist_id} Venue_id: {self.venue_id}>'  
 
-db.create_all()    
+#db.create_all()    
 #----------------------------------------------------------------------------#
 # Filters.
 #----------------------------------------------------------------------------#
